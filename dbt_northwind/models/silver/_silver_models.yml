@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: filtered_customers
+    description: filtered customers view
+    columns:
+      - name: customer_id
+        data_tests:
+          - unique
+          - not_null
+  
+  - name: filtered_orders
+    description: filtered orders view
+    columns:
+      - name: order_id
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('filtered_customers')
+              field: customer_id
+
+  - name: filtered_us_states
+    description: filtered us states
+    columns:
+      - name: state_id
+        data_tests:
+          - unique
+          - not_null
+          
+  - name: filtered_categories
+    description: filtered categories view
+    columns:
+      - name: category_id
+        data_tests:
+          - unique
+          - not_null 
+        
+  - name: filtered_products
+    description: filtered products view
+    columns:
+      - name: product_id  # Corrected from "prodcut_id"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: filtered_order_details
+    description: filtered order details view
+    columns:
+      - name: order_id
+        data_tests:
+          - unique
+          - not_null
+      - name: product_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('filtered_products')
+              field: product_id
