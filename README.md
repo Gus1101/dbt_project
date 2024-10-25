@@ -22,4 +22,4 @@ Abaixo está a estrutura básica do projeto:
 ## Pré-requisitos
 - Python 3.8+
 - dbt >= 0.21.0
-- Data Warehouse compatível (Ex.: Snowflake, BigQuery, Redshift, Postgres)
+- Data Warehouse compatível (Ex.: Snowflake, Redshift, Postgres)
