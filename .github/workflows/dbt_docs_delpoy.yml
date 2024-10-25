@@ -25,7 +25,7 @@ jobs:
       run: |
         mkdir -p ~/.dbt
         echo "
-        northwind:
+        dbt_northwind:
           target: prod
           outputs:
             prod:
