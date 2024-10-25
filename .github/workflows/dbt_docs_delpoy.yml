@@ -26,9 +26,9 @@ jobs:
         mkdir -p ~/.dbt
         echo "
         dbt_northwind:
-          target: prod
+          target: dev
           outputs:
-            prod:
+            dev:
               type: postgres
               host: ${{ secrets.HOST_DBT }}
               port: ${{ secrets.PORT_DBT }}
