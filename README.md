@@ -1,4 +1,4 @@
-# Projeto dbt - Nome do Projeto
+# DBT northwind
 
 ## Visão Geral
 Este projeto utiliza o **dbt** (Data Build Tool) para transformar e modelar dados de [Fonte de Dados] em um formato analítico e pronto para análise. O dbt permite criar, testar e documentar o pipeline de transformação de dados, com práticas recomendadas e versionamento de código.
