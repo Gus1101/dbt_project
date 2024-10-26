@@ -1,33 +1,33 @@
-# DBT northwind
+# DBT Northwind
 
-## Visão Geral
-Este projeto utiliza o **dbt** (Data Build Tool) para transformar e modelar dados de uma empresa ficticia de varejo em um formato analítico e pronto para análise. O dbt permite criar, testar e documentar o pipeline de transformação de dados, com práticas recomendadas e versionamento de código.
+## Overview
+This project uses **dbt** (Data Build Tool) to transform and model data from a fictional retail company into an analytical format ready for analysis. dbt allows for creating, testing, and documenting the data transformation pipeline with best practices and code versioning.
 
-Os dados estão persistidos em um banco relacional POSTGRES no serviço AWS RDS, além disso há uma rotina de CI/CD para pushs na qual é realizada a atualização e hospadagem da documentação do projeto no GitHub Pages.
+The data is stored in a relational POSTGRES database on the AWS RDS service. Additionally, there is a CI/CD routine for pushes, which updates and hosts the project documentation on GitHub Pages.
 
-Também foi utilizada uma instancia Render para Cron Jobs, de forma a simular atualizações nos dados.
+A Render instance was also used for Cron Jobs to simulate data updates.
 
-Segue a estrutura simplificada do projeto:
+Below is the simplified structure of the project:
 
-![Gráfico da estrutura simplificada do projeto](img/arch.png)
+![Diagram of the simplified project structure](img/arch.png)
 
-## Estrutura do Projeto
-Abaixo está a estrutura básica do projeto:
+## Project Structure
+Here is the basic structure of the project:
 
-- `models/`: Contém os modelos dbt, que são as transformações SQL organizadas em subpastas.
-  - `staging/`: Modelos de _staging_ (pré-transformação) que carregam dados brutos para o Data Warehouse.
-  - `silver/`: Modelos intermediários com transformações e limpezas adicionais.
-  - `gold/`: Modelos finais que fornecem dados prontos para análise.
+- `models/`: Contains the dbt models, which are SQL transformations organized into subfolders.
+  - `staging/`: Staging models (pre-transformation) that load raw data into the Data Warehouse.
+  - `silver/`: Intermediate models with additional transformations and cleaning.
+  - `gold/`: Final models that provide data ready for analysis.
 
-- `seeds/`: Arquivos de dados estáticos (CSV) que podem ser carregados como tabelas.
+- `seeds/`: Static data files (CSV) that can be loaded as tables.
 
-- `snapshots/`: Configurações de _snapshots_ para capturar o histórico de alterações nos dados.
+- `snapshots/`: Snapshot configurations to capture historical changes in data.
 
-- `macros/`: Contém as macros para modularizar e reutilizar SQL.
+- `macros/`: Contains macros to modularize and reuse SQL.
 
-- `tests/`: Testes de qualidade dos dados.
+- `tests/`: Data quality tests.
 
-## Pré-requisitos
+## Prerequisites
 - Python 3.8+
 - dbt >= 0.21.0
-- Data Warehouse compatível (Ex.: Snowflake, Redshift, Postgres)
+- Compatible Data Warehouse (e.g., Snowflake, Redshift, Postgres)
